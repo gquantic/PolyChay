@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
      Route::prefix('organisation')->group(function () {
-         Route::view('/home', 'organisation.home');
+         Route::view('/', 'organisation.home');
 
          Route::get('employees', function () {
             return view('organisation.employees');

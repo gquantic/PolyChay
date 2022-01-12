@@ -18,27 +18,27 @@ input:disabled{
 /* Fonts */
 @font-face {
     font-family: 'Gilroy regular';
-    src: url(/profile/assets/fonts/Gilroy-Regular.ttf);
+    src: url(/fonts/Gilroy-Regular.ttf);
 }
 @font-face {
     font-family: 'Gilroy Regular';
-    src: url(/profile/assets/fonts/Gilroy-Regular.ttf);
+    src: url(/fonts/Gilroy-Regular.ttf);
 }
 @font-face {
     font-family: 'Gilroy';
-    src: url(/profile/assets/fonts/Gilroy-Regular.ttf);
+    src: url(/fonts/Gilroy-Regular.ttf);
 }
 @font-face {
     font-family: 'gilroy regular';
-    src: url(/profile/assets/fonts/Gilroy-Regular.ttf);
+    src: url(/fonts/Gilroy-Regular.ttf);
 }
 @font-face {
     font-family: 'Gilroy Bold';
-    src: url(/profile/assets/fonts/gilroy-bold.ttf);
+    src: url(/fonts/gilroy-bold.ttf);
 }
 @font-face {
     font-family: 'Gilroy Semibold';
-    src: url(/profile/assets/fonts/Gilroy-Semibold.ttf);
+    src: url(/fonts/Gilroy-Semibold.ttf);
 }
 
 .table thead th {
