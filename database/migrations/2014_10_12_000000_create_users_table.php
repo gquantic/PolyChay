@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
 
             $table->boolean('accepted')->default(false);
 
-            $table->string('logo');
+            $table->string('logo')->nullable();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -43,6 +43,14 @@ class CreateUsersTable extends Migration
             $table->string('street')->nullable();
             $table->string('house')->nullable();
             $table->string('person')->nullable();
+
+            /**
+             * Данные для сотрудника
+             */
+            $table->boolean('isEmployee')->default(0);
+
+            $table->unsignedBigInteger('organisation')->nullable()->comment('ID организации, если сотрудник.');
+            $table->foreign('organisation')->references('id')->on('users');
 
             /**
              * Токен

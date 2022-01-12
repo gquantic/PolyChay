@@ -17,6 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware('auth')->group(function () {
+     Route::prefix('organisation')->group(function () {
+         Route::view('/home', 'organisation.home');
+
+         Route::get('employees', function () {
+            return view('organisation.employees');
+         });
+
+         Route::get('employee/{id}', function ($id) {
+             return $id;
+         });
+     });
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
