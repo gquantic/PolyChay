@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
-     Route::prefix('organisation')->group(function () {
+     Route::prefix('organisation')->middleware('isOrganisation')->group(function () {
          Route::view('/', 'organisation.home');
 
          Route::get('employees', function () {

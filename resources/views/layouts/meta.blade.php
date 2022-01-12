@@ -46,14 +46,14 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xl-8 col-lg-9">
             @yield('header')
+
             <!-- Начало тела -->
-            <section class="main-section">
+            <div class="col-xl-8 col-lg-9">
                 @yield('content')
-            </section>
-        </div>
+            </div>
     </div>
 </div>
+
 </body>
 </html>

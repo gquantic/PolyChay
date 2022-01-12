@@ -47,7 +47,7 @@ class CreateUsersTable extends Migration
             /**
              * Данные для сотрудника
              */
-            $table->boolean('isEmployee')->default(0);
+            $table->boolean('isOrganisation')->default(0);
 
             $table->unsignedBigInteger('organisation')->nullable()->comment('ID организации, если сотрудник.');
             $table->foreign('organisation')->references('id')->on('users');

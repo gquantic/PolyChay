@@ -2,14 +2,14 @@
     <div class="menu-vertical" id="vertical-menu">
         <nav class="navbar navbar-expand-lg navbar-light catalog-navbar">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <img src="/profile/assets/img/icons/down-arrow.svg" alt="">
+                <img src="/img/icons/down-arrow.svg" alt="">
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto d-block">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="height:100%;">
+                <ul class="navbar-nav m-auto d-flex flex-column align-items-center justify-content-between" style="height: 100%;">
                     <li class="header-logo mt-2">
-                        <a class="nav-link max-logo" href="/"><img src="/profile/assets/img/logo.png" alt="" width="180px"></a>
-                        <a class="nav-link min-logo" href="/"><img src="/profile/assets/img/min-logo.png" alt=""></a>
+                        <a class="nav-link max-logo" href="/"><img src="/img/logo.png" alt="" width="180px"></a>
+                        <a class="nav-link min-logo" href="/"><img src="/img/min-logo.png" alt=""></a>
                     </li>
 
                     <div class="links">
@@ -58,17 +58,15 @@
                         </li>
                     </div>
 
-                    <div class="head-footer">
-
-
-                        <div class="contacts" style="margin-bottom: 40px;">
+                    <div class="head-footer" style="margin-bottom: 50px;width:fit-content;max-width: 200px;">
+                        <div class="contacts">
                             <p style="margin-bottom: 20px;">Техническая поддержка  <b>"ПолуЧай”</b></p>
                             <b>+7 (800) 809-90-90</b> <br>
                             <a href="">tp@polychay.ru</a> <br>
                             Пн - Пт: 9:00 - 19:00 мск <br>
                         </div>
 
-                        <button class="" style="box-shadow: none !important;background: rgba(0,0,0,0);border: none;outline: none;" id="minimalize_verticalmenu">
+                        <button class="" style="box-shadow: none !important;background: rgba(0,0,0,0);border: none;outline: none;margin-top: 15px;" id="minimalize_verticalmenu">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14px" height="25px">
                                 <path d="M12.777,24.131 C13.141,23.768 13.142,23.178 12.778,22.813 L3.117,13.133 C2.754,12.769 2.754,12.178 3.118,11.814 L12.778,2.134 C13.142,1.770 13.141,1.180 12.777,0.816 C12.412,0.453 11.822,0.453 11.459,0.818 L1.799,10.497 C1.254,11.042 0.981,11.758 0.981,12.474 C0.981,13.190 1.254,13.906 1.798,14.450 L11.459,24.130 C11.822,24.494 12.412,24.495 12.777,24.131 Z"></path>
                             </svg>

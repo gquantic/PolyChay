@@ -127,7 +127,7 @@ a.sub-link.active {
 }
 
 /* Minimalize */
-.menu-vertical-minivalize{
+.menu-vertical-minimalize{
     background: #fff;
     margin-left: 25px;
     margin-top: 20px;
@@ -141,22 +141,22 @@ a.sub-link.active {
     transition: .5s ease;
 }
 
-.menu-vertical-minivalize .max-logo, .menu-vertical-minivalize .links, .menu-vertical-minivalize .min_links span, .menu-vertical-minivalize .contacts{
+.menu-vertical-minimalize .max-logo, .menu-vertical-minimalize .links, .menu-vertical-minimalize .min_links span, .menu-vertical-minimalize .contacts{
     display: none;
 }
 
-.menu-vertical-minivalize .collapse navbar-collapse{
+.menu-vertical-minimalize .collapse navbar-collapse{
     width: 50px;
 }
-.menu-vertical-minivalize ul{
+.menu-vertical-minimalize ul{
     margin-left: -2px;
 }
 
-.menu-vertical-minivalize .min_links{
+.menu-vertical-minimalize .min_links{
     margin-top: 200px;
 }
 
-.menu-vertical-minivalize .head-footer button{
+.menu-vertical-minimalize .head-footer button{
     position: fixed;
     bottom: 0;
     margin-bottom: 60px;
@@ -165,7 +165,7 @@ a.sub-link.active {
     width: 20px;
 }
 
-.menu-vertical-minivalize .nav-item {
+.menu-vertical-minimalize .nav-item {
     padding: 5px 0px;
     width: 80%;
     text-align: center;
@@ -175,7 +175,7 @@ a.sub-link.active {
     transition: .2s ease;
 }
 
-.menu-vertical-minivalize .nav-item svg{
+.menu-vertical-minimalize .nav-item svg{
     width: 70px;
     height: 30px;
     margin: 0 auto;
@@ -276,7 +276,7 @@ a.sub-link.active {
 
 
     /* Maximum */
-    .menu-vertical-minivalize{
+    .menu-vertical-minimalize{
         background: #fff;
         margin-left: 25px;
         margin-top: 20px;
@@ -291,14 +291,14 @@ a.sub-link.active {
         overflow: hidden;
         z-index: 1000;
     }
-    .menu-vertical-minivalize .min_links, .menu-vertical-minimalize .min-logo{
+    .menu-vertical-minimalize .min_links, .menu-vertical-minimalize .min-logo{
         display: none;
     }
-    .menu-vertical-minivalize .links{
+    .menu-vertical-minimalize .links{
         margin-top: 200px;
     }
 
-    .menu-vertical-minivalize .nav-item{
+    .menu-vertical-minimalize .nav-item{
         max-width: 260px;
         width: 100%;
         border-radius: 30px;
@@ -306,20 +306,20 @@ a.sub-link.active {
         transition: .1s ease;
         margin-bottom: 15px;
     }
-    .menu-vertical-minivalize .nav-item .nav-link{
+    .menu-vertical-minimalize .nav-item .nav-link{
         color: #50667f !important;
         text-align: left;
         display: flex;
         font-size: 18px;
     }
-    .menu-vertical-minivalize .nav-item svg{
+    .menu-vertical-minimalize .nav-item svg{
         width: 25px;
         height: 25px;
         margin-right: 16px;
         margin-left: 0px;
     }
 
-    .menu-vertical-minivalize .head-footer{
+    .menu-vertical-minimalize .head-footer{
         text-align: left;
         position: fixed;
         bottom: 0;
@@ -328,24 +328,24 @@ a.sub-link.active {
         margin-bottom: 60px;
         width: 250px;
     }
-    .menu-vertical-minivalize .head-footer p{
+    .menu-vertical-minimalize .head-footer p{
         font-size: 17px;
     }
-    .menu-vertical-minivalize .head-footer button{
+    .menu-vertical-minimalize .head-footer button{
         margin-left: 68px;
         width: 20px;
     }
-    .menu-vertical-minivalize .max-logo, .menu-vertical-minivalize .links{
+    .menu-vertical-minimalize .max-logo, .menu-vertical-minimalize .links{
         display: block;
     }
-    .menu-vertical-minivalize{
+    .menu-vertical-minimalize{
 
     }
-    .menu-vertical-minivalize .min-logo{
+    .menu-vertical-minimalize .min-logo{
         display: none;
     }
 
-    .menu-vertical-minivalize .head-footer{
+    .menu-vertical-minimalize .head-footer{
         text-align: left;
         position: fixed;
         bottom: 0;
@@ -354,10 +354,10 @@ a.sub-link.active {
         margin-bottom: 60px;
         width: 250px;
     }
-    .menu-vertical-minivalize .head-footer p{
+    .menu-vertical-minimalize .head-footer p{
         font-size: 17px;
     }
-    .menu-vertical-minivalize .max-logo, .menu-vertical-minivalize .links, .menu-vertical-minivalize .min_links span, .menu-vertical-minivalize .contacts{
+    .menu-vertical-minimalize .max-logo, .menu-vertical-minimalize .links, .menu-vertical-minimalize .min_links span, .menu-vertical-minimalize .contacts{
         display: block;
     }
 }

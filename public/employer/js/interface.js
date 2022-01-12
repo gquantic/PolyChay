@@ -15,7 +15,7 @@ $('#minimalize_verticalmenu').on('click',function(){
         $('#header-col').addClass('col-lg-2');
         $('#header-col').removeClass('col-lg-3 col-xl-3');
 
-        $('#vertical-menu').addClass('menu-vertical-minivalize');
+        $('#vertical-menu').addClass('menu-vertical-minimalize');
         $('#vertical-menu').removeClass('menu-vertical');
         menuMinimalize = true;
     }else{
@@ -32,7 +32,7 @@ $('#minimalize_verticalmenu').on('click',function(){
         $('#header-col').removeClass('col-lg-2');
 
         $('#vertical-menu').addClass('menu-vertical');
-        $('#vertical-menu').removeClass('menu-vertical-minivalize');
+        $('#vertical-menu').removeClass('menu-vertical-minimalize');
         menuMinimalize = false;
     }
 });
