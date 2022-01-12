@@ -18,6 +18,27 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
+    /**
+     * Resources for authenticated users
+     */
+    Route::resources([
+        'user' => \App\Http\Controllers\UserController::class,
+    ]);
+
+    /**
+     * Routes for employee links with middleware
+     * @var boolean isEmployee
+     */
+     Route::prefix('employee')->middleware('isEmployee')->group(function () {
+        Route::get('home', function () {
+            return view('employee.home');
+        });
+     });
+
+    /**
+     * Routes for organisation links with middleware
+     * @var boolean isOrganisation
+     */
      Route::prefix('organisation')->middleware('isOrganisation')->group(function () {
          Route::view('/', 'organisation.home');
 
