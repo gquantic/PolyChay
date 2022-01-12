@@ -1,8 +1,12 @@
 @extends('layouts.meta')
 
-@section('content')
+@section('body-meta')
+    style="background: url('/img/covermute.png');
+    background-size: cover;
+    background-repeat: no-repeat;"
+@endsection
 
-<body style="background: url('img/covermute.png');background-size: cover;background-repeat: no-repeat;">
+@section('post-content')
 <form action="{{ route('login') }}" method="post">
     @csrf
     <div class="in_form">
@@ -83,7 +87,4 @@
         cursor: pointer;
     }
 </style>
-</body>
-</html>
-
 @endsection

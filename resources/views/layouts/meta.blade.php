@@ -42,7 +42,7 @@
 
     @include('ui.icons')
 </head>
-<body>
+<body @yield('body-meta')>
 
 <div class="container-fluid">
     <div class="row">
@@ -54,6 +54,8 @@
             </div>
     </div>
 </div>
+
+@yield('post-content')
 
 </body>
 </html>

@@ -1,6 +1,5 @@
 @extends('layouts.meta')
 
-@section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -14,10 +13,14 @@
                         </div>
                     @endif
 
+                        <form method="post" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit">Exit</button>
+                        </form>
+
                     {{ __('You are logged in!') }}
                 </div>
             </div>
         </div>
     </div>
 </div>
-@endsection
