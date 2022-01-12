@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class IsOrganisation
+class IsEmployee
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,8 @@ class IsOrganisation
      */
     public function handle(Request $request, Closure $next)
     {
-        if (\Auth::user()->isOrganisation != true) {
-            return redirect('/employee/home');
+        if (\Auth::user()->isOrganisation != false) {
+            return redirect('/organisation/');
         }
 
         return $next($request);

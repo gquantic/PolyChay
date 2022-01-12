@@ -56,6 +56,7 @@ class CreateUsersTable extends Migration
              * Токен
              */
             $table->rememberToken();
+
             $table->timestamps();
         });
     }

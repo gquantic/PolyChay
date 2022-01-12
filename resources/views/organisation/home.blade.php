@@ -38,7 +38,9 @@
 
         <div class="row mt-3">
             <div class="col-md-12">
-                <div id="editprofile" class="form">
+                <form method="post" action="{{ route('user.update', Auth::id()) }}" id="editprofile" class="form">
+                    @method('PUT')
+                    @csrf
                     <div class="col-md-12">
                         <div class="form-group">
                             <div class="input-group mb-2">
@@ -66,7 +68,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">Город</div>
                                 </div>
-                                <input type="text" class="form-control" id="city" placeholder="" value="{{ Auth::user()->city }}">
+                                <input type="text" class="form-control" name="city" placeholder="" value="{{ Auth::user()->city }}">
                             </div>
                         </div>
                     </div>
@@ -76,11 +78,11 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">Улица</div>
                                 </div>
-                                <input type="text" class="form-control" id="street" placeholder="" value="{{ Auth::user()->street }}">
+                                <input type="text" class="form-control" name="street" placeholder="" value="{{ Auth::user()->street }}">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">Дом</div>
                                 </div>
-                                <input type="text" class="form-control" id="house" placeholder="" value="{{ Auth::user()->house }}">
+                                <input type="text" class="form-control" name="house" placeholder="" value="{{ Auth::user()->house }}">
                             </div>
                         </div>
                     </div>
@@ -90,36 +92,36 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">Ответственное лицо</div>
                                 </div>
-                                <input type="text" class="form-control" id="person" placeholder="" value="{{ Auth::user()->person }}">
+                                <input type="text" class="form-control" name="person" placeholder="" value="{{ Auth::user()->person }}">
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">Телефон</div>
-                                </div>
-                                <input type="text" class="form-control" id="phone" placeholder="" value="{{ Auth::user()->phone }}">
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="col-md-12">--}}
+{{--                        <div class="form-group">--}}
+{{--                            <div class="input-group mb-2">--}}
+{{--                                <div class="input-group-prepend">--}}
+{{--                                    <div class="input-group-text">Телефон</div>--}}
+{{--                                </div>--}}
+{{--                                <input type="text" class="form-control" name="phone" placeholder="" value="{{ Auth::user()->phone }}">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <div class="col-md-12">
                         <div class="form-group">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">Электронная почта</div>
                                 </div>
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="" value="aliev.murad.1997@mail.ru" disabled="">
+                                <input type="text" class="form-control" name="email" id="inlineFormInputGroup" placeholder="" value="{{ Auth::user()->email }}" disabled="">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-12 mt-3">
-                        <button id="saveProfileInfo" class="btn btn-primary">
+                        <button id="saveProfileInfo" class="btn btn-primary" type="submit">
                             Сохранить
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
 
