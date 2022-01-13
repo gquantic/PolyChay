@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Testing\Fluent\Concerns\Has;
+use Illuminate\Hashing\BcryptHasher;
 
 class UserController extends Controller
 {
@@ -69,7 +72,7 @@ class UserController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
@@ -91,5 +94,25 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Edit password
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
+     */
+    public function editUserPassword(Request $request)
+    {
+        if (Hash::check($request->old_password, \Auth::user()->password)) {
+            User::update([
+                'password' => Hash::make($request->password)
+            ]);
+        } else {
+            return redirect('/organisation')->with('error','Старый пароль введён неверно');
+        }
+
+        return redirect('/organisation')->with('success','Информация успешно обновлена');
     }
 }

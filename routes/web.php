@@ -19,11 +19,21 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
     /**
+     * Redirect routes
+     */
+    Route::redirect('/home', '/organisation/');
+
+    /**
      * Resources for authenticated users
      */
     Route::resources([
         'user' => \App\Http\Controllers\UserController::class,
     ]);
+
+    /**
+     * Post routes
+     */
+    Route::post('/action/edit/password/', [\App\Http\Controllers\UserController::class, 'editUserPassword']);
 
     /**
      * Routes for employee links with middleware
@@ -48,6 +58,10 @@ Route::middleware('auth')->group(function () {
 
          Route::get('employee/{id}', function ($id) {
              return $id;
+         });
+
+         Route::get('dashboard', function () {
+            return view('organisation.dashboard');
          });
      });
 });

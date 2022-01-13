@@ -37,8 +37,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/all.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styles.min.css') }}" rel="stylesheet">
 
     @include('ui.icons')
 </head>

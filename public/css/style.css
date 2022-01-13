@@ -104,7 +104,7 @@ body {
 
 /* Modal */
 .modal-dialog {
-    background: url('/profile/assets/img/bglines.png');
+    background: url('/img/bglines.png');
     padding: 5px;
     border-radius: 14px;
 }

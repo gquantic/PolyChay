@@ -157,11 +157,12 @@
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
-                    <div id="form_editpass">
+                    <form method="post" action="/action/edit/password/" id="form_editpass">
+                        @csrf
                         <div class="modal-body">
-                            <input type="password" id="oldpass" placeholder="Введите старый пароль" class="form-control onwhite">
-                            <input type="password" id="newpass" placeholder="Придумайте пароль" class="form-control onwhite mt-2">
-                            <input type="password" id="repass" placeholder="Повторите новый пароль" class="form-control onwhite mt-2">
+                            <input type="password" name="old_password" placeholder="Введите старый пароль" class="form-control onwhite">
+                            <input type="password" name="new_password" placeholder="Придумайте пароль" class="form-control onwhite mt-2">
+                            <input type="password" name="password" placeholder="Повторите новый пароль" class="form-control onwhite mt-2">
                         </div>
                         <div class="row">
                             <div class="col-6" id="msg">
@@ -170,7 +171,7 @@
                                 <button type="submit" class="btn btn-primary">Изменить</button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
