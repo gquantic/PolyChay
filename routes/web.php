@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +22,7 @@ Route::middleware('auth')->group(function () {
     /**
      * Redirect routes
      */
-    Route::redirect('/home', '/organisation/');
+    Route::redirect('home', 'profile');
 
     /**
      * Resources for authenticated users
@@ -40,11 +41,13 @@ Route::middleware('auth')->group(function () {
      * @var boolean isEmployee
      */
      Route::prefix('employee')->middleware('isEmployee')->group(function () {
-        Route::get('home', function () {
+        Route::get('profile', function () {
             return view('employee.home');
-        });
+        })->name('profile');
      });
-
+    Route::get('profile/dashboard', function () {
+        return view('organisation.dashboard');
+    })->name('dashboard');
     /**
      * Routes for organisation links with middleware
      * @var boolean isOrganisation
@@ -60,9 +63,11 @@ Route::middleware('auth')->group(function () {
              return $id;
          });
 
-         Route::get('dashboard', function () {
-            return view('organisation.dashboard');
-         });
+//         Route::get('dashboard', function () {
+//            return view('organisation.dashboard');
+//         });
+
+
      });
 });
 

@@ -40,6 +40,7 @@
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.min.css') }}" rel="stylesheet">
 
+
     @include('ui.icons')
 </head>
 <body @yield('body-meta')>

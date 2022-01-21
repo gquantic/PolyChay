@@ -1,3 +1,6 @@
+@extends('layouts.meta')
+@section('header')
+
 <div class="col-lg-3 col-xl-3 headermenu-col" id="header-col">
     <div class="menu-vertical" id="vertical-menu">
         <nav class="navbar navbar-expand-lg navbar-light catalog-navbar">
@@ -14,13 +17,13 @@
 
                     <div class="links">
                         <li class="nav-item">
-                            <a class="nav-link" href="/organisation/">
+                            <a class="nav-link" href="{{route('profile')}}">
                                 <svg><use xlink:href="#icon-testing"></use></svg>
                                 <span>Организация</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/organisation/dashboard">
+                            <a class="nav-link" href="{{route('dashboard')}}">
                                 <svg><use xlink:href="#icon-profits"></use></svg>
                                 <span>Статистика</span>
                             </a>
@@ -77,11 +80,10 @@
         </nav>
     </div>
 </div>
-
 <form id="logout" class="visually-hidden" method="post" action="/logout">
     @csrf
     <button type="submit" style="display: none;"></button>
 </form>
+<script src="{{asset('js/interface.js')}}"></script>
 
-<!-- Scripts -->
-<script src="{{ asset('/js/interface.js') }}"></script>
+@endsection
