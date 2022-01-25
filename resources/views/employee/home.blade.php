@@ -5,7 +5,7 @@
             <div class="col-xl-5 col-lg-5">
                 <div class="card corpcard">
                     <div class="w-100 d-flex justify-content-start align-items-center btn btn-default" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="/profile/assets/img/deflogo.png" alt="" width="70px" height="70px" style="margin-right: 15px;">
+                        <img src="{{asset('img/deflogo.png')}}" alt="" width="70px" height="70px" style="margin-right: 15px;">
                         <h2>Eeeelecrio</h2>
                         <svg class="arrowdown" width="15px" style="position: absolute; right: 0;margin-right: 25px;margin-top:-5px;" height="15px"><use xlink:href="#icon-down-arrow"></use></svg>
                     </div>

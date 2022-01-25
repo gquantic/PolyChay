@@ -14,22 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::middleware('auth')->group(function () {
     /**
      * Redirect routes
      */
-    Route::redirect('home', 'profile');
+    Route::redirect('/', 'employee/profile');
 
     /**
      * Resources for authenticated users
      */
-    Route::resources([
-        'user' => \App\Http\Controllers\UserController::class,
-    ]);
+    Route::resources(['employee/users' => \App\Http\Controllers\UserController::class,]);
 
     /**
      * Post routes
@@ -45,9 +39,12 @@ Route::middleware('auth')->group(function () {
             return view('employee.home');
         })->name('profile');
      });
-    Route::get('profile/dashboard', function () {
-        return view('organisation.dashboard');
-    })->name('dashboard');
+
+    Route::get('employee/add-employeer' ,function (){
+       return view('employee.addemployeer');
+    })->name('add-employeer');
+
+
     /**
      * Routes for organisation links with middleware
      * @var boolean isOrganisation
@@ -62,15 +59,7 @@ Route::middleware('auth')->group(function () {
          Route::get('employee/{id}', function ($id) {
              return $id;
          });
-
-//         Route::get('dashboard', function () {
-//            return view('organisation.dashboard');
-//         });
-
-
      });
 });
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

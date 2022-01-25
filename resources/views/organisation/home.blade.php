@@ -23,7 +23,7 @@
                 <h5><b class="mr-3">0055</b> Личный номер организации</h5>
             </div>
             <div class="col-lg-3 d-flex justify-content-end align-items-center flex-column">
-                <img src="/img/qrcode.png" alt="" style="margin-top: 5px;">
+                <img src="{{asset('img/qrcode.png')}}" alt="" style="margin-top: 5px;">
                 <a href="javascript:void(0);" data-toggle="modal" data-target="#qrcodes" target="_blank" style="color:#ef7d74;width:80px;text-align:center;line-height:15px;margin-top:5px;font-size: 14px;">Скачать
                     <br> <b>QR code</b></a>
             </div>
