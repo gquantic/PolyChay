@@ -107,7 +107,7 @@ return [
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
     'regex' => 'The :attribute format is invalid.',
-    'required' => 'The :attribute field is required.',
+    'required' => ' Поле :attribute обязательно для заполнения.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
     'required_with' => 'The :attribute field is required when :values is present.',
@@ -157,6 +157,16 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'logo'=> '"Фото"',
+        'name'=> '"ФИО"',
+        'card'=> '"Номер карты"',
+        'email'=> '"Электронная почта"',
+        'passport_series_and_number'=> '"Серия и номер паспорта"',
+        'date_of_issue_of_the_identification_document'=> '"Дата выдачи идентификационного документа"',
+        'place/authority_that_issued_the_identification_document'=> '"Место/орган, выдавший идентификационный документ"',
+        'registered'=> '"Зарегистрирован"',
+        'date_of_birth'=> '"Дата рождения"',
+    ],
 
 ];

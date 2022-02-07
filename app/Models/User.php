@@ -22,8 +22,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'logo',
         'name',
         'email',
+        'card',
         'password',
         'city',
         'street',
@@ -31,6 +33,11 @@ class User extends Authenticatable
         'type',
         'person',
         'password',
+        'passport_series_and_number',
+        'date_of_issue_of_the_identification_document',
+        'place/authority_that_issued_the_identification_document',
+        'registered',
+        'date_of_birth',
     ];
 
     /**

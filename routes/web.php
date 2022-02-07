@@ -45,6 +45,8 @@ Route::middleware('auth')->group(function () {
     })->name('add-employeer');
 
 
+
+
     /**
      * Routes for organisation links with middleware
      * @var boolean isOrganisation

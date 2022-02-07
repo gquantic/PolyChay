@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
 
             /**
              * Данные для организации
@@ -43,6 +43,18 @@ class CreateUsersTable extends Migration
             $table->string('street')->nullable();
             $table->string('house')->nullable();
             $table->string('person')->nullable();
+            $table->string('card')->comment('номер банковской карты')->nullable();
+
+
+            /**
+             * Реквизиты для выпуска виртуальной банковской карты сервиса
+             */
+
+                $table->string('passport_series_and_number')->nullable();
+                $table->string('date_of_issue_of_the_identification_document')->nullable();
+                $table->string('place/authority_that_issued_the_identification_document')->nullable();
+                $table->string('registered')->nullable();
+                $table->string('date_of_birth')->nullable();
 
             /**
              * Данные для сотрудника

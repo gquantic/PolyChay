@@ -11,6 +11,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{asset('plugins/notifications/js/lobibox.min.js')}}"></script>
+    <script src="{{asset('plugins/notifications/js/notifications.min.js')}}"></script>
+    <script src="{{asset('plugins/notifications/js/notification-custom-script.js')}}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -39,6 +42,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/notifications/css/lobibox.min.css') }}" rel="stylesheet">
 
 
     @include('ui.icons')

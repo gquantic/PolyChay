@@ -2,14 +2,24 @@
 @section('content')
 
     <section class="main-section">
-        <form action=" " method="post" enctype="multipart/form-data">
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <form action="{{route('users.store')}}" method="POST" enctype="multipart/form-data" >
+            @csrf
             <div class="row" style="height: 100px;display: flex;align-items: center;">
                 <div class="col-xl-5 col-lg-5">
                     <h3 style="font-family: 'Gilroy Bold';" class="mt-1 mb-3">Добавить сотрудника</h3>
                     <div class="card corpcard">
-                        <label for="profileimage">
+                        <label for="logo">
                             <div class="w-100 mt-2 d-flex justify-content-start align-items-center btn btn-default">
-                                <div class="dropify-wrapper has-preview"><div class="dropify-message"><span class="file-icon"> <p>Drug</p></span></div><div class="dropify-loader" style="display: none;"></div><input type="file" class="dropify" name="image" id="profileimage" data-default-file="{{asset('img/deflogo.png')}}" style="height: 100px !important;width: 100px !important;"><div class="dropify-preview" style="display: block;"><span class="dropify-render"><img src="{{asset('img/deflogo.png')}}"></span><div class="dropify-infos" style="border-radius: 20px;"></div></div></div>
+                                <div class="dropify-wrapper has-preview"><div class="dropify-message"><span class="file-icon"> <p>Drug</p></span></div><div class="dropify-loader" style="display: none;"></div><input type="file" class="dropify" name="logo" id="logo" value="{{old('logo')}}" data-default-file="{{asset('img/deflogo.png')}}" style="height: 100px !important;width: 100px !important;"><div class="dropify-preview" style="display: block;"><span class="dropify-render"><img src="{{asset('img/deflogo.png')}}"></span><div class="dropify-infos" style="border-radius: 20px;"></div></div></div>
                                 <h2>Загрузить фото</h2>
                                 <svg class="iconafter" transform="translate(3 -2)" width="15px" height="15px"><use xlink:href="#icon-paper-clip"></use></svg>
                             </div>
@@ -38,7 +48,6 @@
                 </div>
             </div>
 
-
             <div class="row mt-3">
                 <div class="col-md-8">
                     <div class="row">
@@ -48,7 +57,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">ФИО</div>
                                     </div>
-                                    <input type="text" class="form-control" name="form-name" placeholder="" value="">
+                                    <input type="text" class="form-control" name="name"  placeholder="" value="{{old('name')}}">
                                 </div>
                             </div>
                         </div>
@@ -58,7 +67,7 @@
                                 <h6 class="mb-3" style="font-family: 'Gilroy Bold';">Реквизиты личной дебетовой карты</h6>
                                 <div class="d-flex align-items-center">
                                     <span class="opacity">Номер карты</span>
-                                    <input type="text" name="form-card" id="form-card" class="wrapper ml-3">
+                                    <input type="text" name="card" id="card" class="wrapper ml-3" value="{{old('card')}}">
                                 </div>
                             </div>
                         </div>
@@ -68,27 +77,27 @@
                                 <h6 class="mb-3" style="font-family: 'Gilroy Bold';">Реквизиты для выпуска виртуальной банковской карты сервиса "Быстрый чай"</h6>
                                 <div class="d-flex align-items-center">
                                     <span class="opacity">Электронная почта</span>
-                                    <input type="text" name="form-email" id="form-email" class="wrapper ml-3">
+                                    <input type="email" name="email" id="email" class="wrapper ml-3" value="{{old('email')}}">
                                 </div>
                                 <div class="d-flex align-items-center mt-2">
                                     <span class="opacity">Серия и номер паспорта</span>
-                                    <input type="text" name="form-passport" id="form-passport" class="wrapper ml-3">
+                                    <input type="text" name="passport_series_and_number" id="passport_series_and_number" class="wrapper ml-3" value="{{old('passport_series_and_number')}}" >
                                 </div>
                                 <div class="d-flex align-items-center mt-2">
                                     <span class="opacity">Дата выдачи идентификационного документа</span>
-                                    <input type="text" name="form-date" id="form-date" class="wrapper ml-3">
+                                    <input type="text" name="date_of_issue_of_the_identification_document" id="date_of_issue_of_the_identification_document" class="wrapper ml-3" value="{{old('date_of_issue_of_the_identification_document')}}">
                                 </div>
                                 <div class="d-flex align-items-center mt-2">
                                     <span class="opacity">Место/орган, выдавший идентификационный документ</span>
-                                    <input type="text" name="form-locate" id="form-locate" class="wrapper ml-3">
+                                    <input type="text" name="place/authority_that_issued_the_identification_document" id="place/authority_that_issued_the_identification_document" class="wrapper ml-3" value="{{old('place/authority_that_issued_the_identification_document')}}">
                                 </div>
                                 <div class="d-flex align-items-center mt-2">
                                     <span class="opacity">Зарегистрирован</span>
-                                    <input type="text" name="form-regdate" id="form-regdate" class="wrapper ml-3">
+                                    <input type="text" name="registered" id="registered" class="wrapper ml-3" value="{{old('registered')}}">
                                 </div>
                                 <div class="d-flex align-items-center mt-2">
                                     <span class="opacity">Дата рождения</span>
-                                    <input type="text" name="form-birth" id="form-birth" class="wrapper ml-3">
+                                    <input type="text" name="date_of_birth" id="date_of_birth" class="wrapper ml-3" value="{{old('date_of_birth')}}">
                                 </div>
                             </div>
                         </div>

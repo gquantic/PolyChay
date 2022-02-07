@@ -28,44 +28,77 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-//        return view('add-employeer');
+        return view('add-employeer');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'logo'=>'required',
+            'name'=>'required',
+            'card'=>'required',
+            'email'=>'required',
+            'passport_series_and_number'=>'required',
+            'date_of_issue_of_the_identification_document'=>'required',
+            'place/authority_that_issued_the_identification_document'=>'required',
+            'registered'=>'required',
+            'date_of_birth'=>'required',
+        ]);
+
+        $user = new User([
+            'logo'=> $request->get('logo'),
+            'name'=> $request->get('name'),
+            'card'=> $request->get('card'),
+            'email'=> $request->get('email'),
+            'passport_series_and_number'=> $request->get('passport_series_and_number'),
+            'date_of_issue_of_the_identification_document'=> $request->get('date_of_issue_of_the_identification_document'),
+            'place/authority_that_issued_the_identification_document'=> $request->get('place/authority_that_issued_the_identification_document'),
+            'registered'=> $request->get('registered'),
+            'date_of_birth'=> $request->get('date_of_birth'),
+        ]);
+
+
+        if ($request->hasFile('logo'))  {
+            $user->logo = $request->file('logo')->store('logo', 'public');
+        }
+
+        $user->save();
+        return redirect('employee/users')->with('success', 'Сотрудник успешно добавлен !');
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function show($id)
     {
-        //
+         $user = User::find($id);
+
+        return view('employee/statistic',   compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('employee.useredit', compact('user'));
     }
 
     /**
@@ -77,13 +110,24 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        User::find($id)->update(
-            array_merge(
-                $request->all()
-            )
-        );
+        $request->validate([
+            'id'=>'required',
+            'name'=>'required',
+            'card'=>'required',
+        ]);
 
-        return redirect('organisation')->with('success','Информация успешно обновлена');
+        $user = User::find($id);
+        $user->id = $request->get('id');
+        $user->name = $request->get('name');
+        $user->card = $request->get('card');
+        $user->save();
+
+        return redirect('employee/users')->with('success', 'Информация  успешно измененна !');
+        //        User::find($id)->update(
+//            array_merge(
+//                $request->all()
+//            )
+//        );
     }
 
     /**
