@@ -10,7 +10,7 @@
                 <h2><b>Статистика</b></h2>
             </div>
             <div class="col-lg-7 d-flex justify-content-end align-items-center flex-column">
-                <a href="{{route('add-employeer')}}" class="btn btn-warning">Добавить сотрудника</a>
+                <a href="{{route('users.create')}}" class="btn btn-warning">Добавить сотрудника</a>
             </div>
         </div>
 

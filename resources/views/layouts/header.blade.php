@@ -23,7 +23,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{'users'}}">
+                            <a class="nav-link" href="{{route('users.index')}}">
                                 <svg><use xlink:href="#icon-profits"></use></svg>
                                 <span>Статистика</span>
                             </a>

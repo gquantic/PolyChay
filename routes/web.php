@@ -40,13 +40,6 @@ Route::middleware('auth')->group(function () {
         })->name('profile');
      });
 
-    Route::get('employee/add-employeer' ,function (){
-       return view('employee.addemployeer');
-    })->name('add-employeer');
-
-
-
-
     /**
      * Routes for organisation links with middleware
      * @var boolean isOrganisation

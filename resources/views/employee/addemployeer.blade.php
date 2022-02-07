@@ -67,7 +67,7 @@
                                 <h6 class="mb-3" style="font-family: 'Gilroy Bold';">Реквизиты личной дебетовой карты</h6>
                                 <div class="d-flex align-items-center">
                                     <span class="opacity">Номер карты</span>
-                                    <input type="text" name="card" id="card" class="wrapper ml-3" value="{{old('card')}}">
+                                    <input type="text" name="card" id="form-card" class="wrapper ml-3" value="{{old('card')}}">
                                 </div>
                             </div>
                         </div>
@@ -81,11 +81,11 @@
                                 </div>
                                 <div class="d-flex align-items-center mt-2">
                                     <span class="opacity">Серия и номер паспорта</span>
-                                    <input type="text" name="passport_series_and_number" id="passport_series_and_number" class="wrapper ml-3" value="{{old('passport_series_and_number')}}" >
+                                    <input type="text" name="passport_series_and_number" id="form-passport" class="wrapper ml-3" value="{{old('passport_series_and_number')}}" >
                                 </div>
                                 <div class="d-flex align-items-center mt-2">
                                     <span class="opacity">Дата выдачи идентификационного документа</span>
-                                    <input type="text" name="date_of_issue_of_the_identification_document" id="date_of_issue_of_the_identification_document" class="wrapper ml-3" value="{{old('date_of_issue_of_the_identification_document')}}">
+                                    <input type="text" name="date_of_issue_of_the_identification_document" id="form-date" class="wrapper ml-3" value="{{old('date_of_issue_of_the_identification_document')}}">
                                 </div>
                                 <div class="d-flex align-items-center mt-2">
                                     <span class="opacity">Место/орган, выдавший идентификационный документ</span>
@@ -93,11 +93,11 @@
                                 </div>
                                 <div class="d-flex align-items-center mt-2">
                                     <span class="opacity">Зарегистрирован</span>
-                                    <input type="text" name="registered" id="registered" class="wrapper ml-3" value="{{old('registered')}}">
+                                    <input type="text" name="registered" id="form-regdate" class="wrapper ml-3" value="{{old('registered')}}">
                                 </div>
                                 <div class="d-flex align-items-center mt-2">
                                     <span class="opacity">Дата рождения</span>
-                                    <input type="text" name="date_of_birth" id="date_of_birth" class="wrapper ml-3" value="{{old('date_of_birth')}}">
+                                    <input type="text" name="date_of_birth" id="form-birth" class="wrapper ml-3" value="{{old('date_of_birth')}}">
                                 </div>
                             </div>
                         </div>
