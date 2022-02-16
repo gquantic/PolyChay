@@ -277,4 +277,4 @@
             }
         </style>
     </section>
-    @endsection
+@endsection

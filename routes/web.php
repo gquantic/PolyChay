@@ -15,14 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth')->group(function () {
-    /**
-     * Redirect routes
-     */
-    Route::redirect('/', 'employee/profile');
 
-    /**
-     * Resources for authenticated users
-     */
+    Route::get('/', function () {
+        return view('selectType');
+    });
+
     Route::resources(['employee/users' => \App\Http\Controllers\UserController::class,]);
 
     /**
@@ -31,30 +28,62 @@ Route::middleware('auth')->group(function () {
     Route::post('/action/edit/password/', [\App\Http\Controllers\UserController::class, 'editUserPassword']);
 
     /**
-     * Routes for employee links with middleware
+     * ADMIN ROUTES
+     */
+    Route::prefix('admin')->middleware('isAdmin')->group(function () {
+        Route::get('profile', function () {
+            return view('admin.organisation');
+        })->name('admin-profile');
+
+        Route::get('dashboard', function () {
+            return view('admin.dashboard');
+        })->name('admin-dashboard');
+
+        Route::get('transacts', function () {
+            return view('admin.transacts');
+        })->name('admin-transacts');
+
+        Route::get('referals', function () {
+            return view('admin.referals');
+        })->name('admin-referals');
+
+    });
+    /**
+     * Routes for EMPLOYEE
      * @var boolean isEmployee
      */
-     Route::prefix('employee')->middleware('isEmployee')->group(function () {
-        Route::get('profile', function () {
-            return view('employee.home');
-        })->name('profile');
-     });
+    Route::prefix('employer')->middleware('isEmployer')->group(function () {
+        Route::get('dashboard', function () {
+            return view('employer.dashboard');
+        })->name('employer-dashboard');
+
+        Route::get('edit', function () {
+            return view('employer.employer-edit');
+        })->name('employer-edit');
+
+        Route::get('login', function () {
+            return view('employee.employeeAuth');
+        });
+    });
+
+//    Route::get('')
+
+//     Route::get('profile/no-accepted', function (){
+//         return view('organisation.noaccepted');
+//     });
 
     /**
      * Routes for organisation links with middleware
      * @var boolean isOrganisation
      */
-     Route::prefix('organisation')->middleware('isOrganisation')->group(function () {
-         Route::view('/', 'organisation.home');
+    Route::prefix('organisation')->middleware('isOrganisation')->group(function () {
+        Route::view('/', 'organisation.home');
 
-         Route::get('employees', function () {
+        Route::get('employees', function () {
             return view('organisation.employees');
-         });
+        });
 
-         Route::get('employee/{id}', function ($id) {
-             return $id;
-         });
-     });
+    });
 });
 
 Auth::routes();

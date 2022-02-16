@@ -14,6 +14,9 @@
     <script src="{{asset('plugins/notifications/js/lobibox.min.js')}}"></script>
     <script src="{{asset('plugins/notifications/js/notifications.min.js')}}"></script>
     <script src="{{asset('plugins/notifications/js/notification-custom-script.js')}}"></script>
+    <script src="{{asset('js/filterTable.v1.0.src.js')}}"></script>
+
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -44,7 +47,7 @@
     <link href="{{ asset('css/styles.min.css') }}" rel="stylesheet">
     <link href="{{ asset('plugins/notifications/css/lobibox.min.css') }}" rel="stylesheet">
 
-
+    <!-- ADMIN RESOURCE FILES -->
     @include('ui.icons')
 </head>
 <body @yield('body-meta')>

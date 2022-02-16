@@ -11,13 +11,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent" style="height:100%;">
                 <ul class="navbar-nav m-auto d-flex flex-column align-items-center justify-content-between" style="height: 100%;">
                     <li class="header-logo mt-2">
-                        <a class="nav-link max-logo" href="/"><img src="/img/logo.png" alt="" width="180px"></a>
-                        <a class="nav-link min-logo" href="/"><img src="/img/min-logo.png" alt=""></a>
+                        <a class="nav-link max-logo" href="/"><img src="{{asset('img/logo.png')}}" alt="" width="180px"></a>
+                        <a class="nav-link min-logo" href="/"><img src="{{asset('img/min-logo.png')}}" alt=""></a>
                     </li>
 
                     <div class="links">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('profile')}}">
+                            <a class="nav-link" href="">
                                 <svg><use xlink:href="#icon-testing"></use></svg>
                                 <span>Организация</span>
                             </a>

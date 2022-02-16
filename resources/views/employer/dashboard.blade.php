@@ -1,17 +1,19 @@
 @extends('layouts.meta')
-
 @section('header')
-    @include('layouts.header')
+    @include('employer.layouts.header')
 @endsection
-
 @section('content')
 
-<section class="main-section">
+    <link href="{{ asset('/css/admin/all.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/admin/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/admin/adminstyles.min.css') }}" rel="stylesheet">
+
     <div class="row" style="height: 50px;display: flex;align-items: center;margin-top: 20px;">
         <div class="col-xl-5 col-lg-5">
-            <h2><b>Статистика сотрудника</b></h2>
+            <h2><b>Ваша статистика</b></h2>
         </div>
-        <div class="col-lg-7 d-flex justify-content-end align-items-center flex-column">
+        <div class="col-lg-5 d-flex justify-content-end align-items-center flex-row">
+            <a href="" class="btn btn-primary mr-3" target="_blank">Виртуальная карта</a>
             <a href="" class="btn btn-warning btn-leftborder mr-0">Редактировать профиль</a>
         </div>
     </div>
@@ -20,19 +22,19 @@
         <div class="col-md-3">
             <div class="card corpcard">
                 <div class="w-100 d-flex justify-content-start align-items-center btn btn-default">
-                    <img src="{{asset('/storage/' .$user->logo)}}" alt="logo" width="50px" style="margin-right: 15px;border-radius: 10px;">
-                    <h2 style="text-align: left;">{{$user->name}}</h2>
+                    <img src=" https://yt3.ggpht.com/a/AATXAJzfkIJxzExWhC_Dm8GJSld8sFbNwH7py2olkJ79=s900-c-k-c0xffffffff-no-rj-mo" alt="" width="50px" style="margin-right: 15px;border-radius: 10px;">
+                    <h2 style="text-align: left;">Чье то имя</h2>
                 </div>
             </div>
         </div>
         <div class="col-md-3 d-flex align-items-center">
             <img src="{{asset('icons/star.svg')}}" width="35px" class="mr-2" alt="">
-            <b style="font-size: 25px;" class="mr-3">-</b>
-            <span style="color: #7a899c;"><b>Ресторан</b> "Eeeelecrio"</span>
+            <b style="font-size: 25px;" class="mr-3"></b>
+            <span style="color: #7a899c;"><b></b></span>
         </div>
         <div class="col-md-3">
-            <b class="mr-3">0055-02</b>
-            <span style="color: #7a899c;">Личный номер сотрудника</span>
+            <b class="mr-3"></b>
+            <span style="color: #7a899c;">Ваш личный номер</span>
         </div>
         <div class="col-lg-3 d-flex justify-content-start align-items-start flex-column">
             <img src="{{asset('img/qrcode.png')}}" alt="" style="margin-top: 5px;">
@@ -60,20 +62,20 @@
                         <div class="">
                             <!-- Calendar 1 -->
                             <div class="calendar-select" style="">
-                                <span id="fromshowdate">0-1.02.2022</span> - <span id="toshowdate">06.02.2022</span>
+                                <span id="fromshowdate">19.01.21</span> - <span id="toshowdate">19.01.21</span>
                             </div>
                         </div>
                         <div class="text-center">
                             <span class="opacity">Рейтинг</span>
-                            <br> <b>-</b>
+                            <br> <b></b>
                         </div>
                         <div class="text-center">
                             <span class="opacity">Кол-во чаевых</span>
-                            <br> <b>0 шт.</b>
+                            <br> <b> шт.</b>
                         </div>
                         <div class="text-center">
                             <span class="opacity">Сумма “Чая” чистыми</span>
-                            <br> <b>0 р.</b>
+                            <br> <b> р.</b>
                         </div>
                     </div>
 
@@ -115,28 +117,48 @@
                         <thead>
                         <tr>
                             <th style="width:150px;"></th>
-                            <th class="" style="width: 200px;">Вывод</th>
-                            <th style="width: 200px;">
+                            <th class="" style="width: 150px;">Вывод</th>
+                            <th style="width: 150px;">
                                 Чай до <br> комиссии
                             </th>
-                            <th style="width: 200px;">
+                            <th style="width: 150px;">
                                 Чай после <br> комиссии
                             </th>
-                            <th style="width: 180px;">
+                            <th style="width: 150px;">
                                 Комиссия на <br> клиенте
                             </th>
-                            <th style="width: 200px;">
+                            <th style="width: 150px;">
                                 Оценка
                             </th>
-                            <!--                            <th style="width: 200px;">-->
-                            <!--                                Что <br> понравилось-->
-                            <!--                            </th>-->
+                            <th style="width: 200px;">
+                                Что <br> понравилось
+                            </th>
                             <th style="">Отзывы</th>
+                            <th style=""></th>
                         </tr>
                         </thead>
                         <tbody>
+
+                        <tr>
+                            <td><span></span></td>
+                            <td></td>
+                            <td> р.</td>
+                            <td> р.</td>
+                            <td>да</td>
+                            <td><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="22px" height="21px" style="margin-top: -5px;margin-right: 5px;">
+                                    <path fill-rule="evenodd"  fill="rgb(240, 108, 96)"
+                                          d="M20.987,6.826 C20.689,6.563 20.322,6.394 19.926,6.337 L15.074,5.631 L12.905,1.234 C12.728,0.874 12.453,0.578 12.112,0.375 C11.795,0.187 11.432,0.088 11.062,0.088 C10.692,0.088 10.329,0.187 10.012,0.375 C9.671,0.578 9.396,0.874 9.219,1.234 L7.050,5.631 L2.198,6.337 C1.802,6.394 1.435,6.563 1.137,6.826 C0.861,7.069 0.654,7.384 0.540,7.736 C0.425,8.088 0.407,8.464 0.488,8.823 C0.575,9.211 0.773,9.564 1.060,9.843 L4.570,13.266 L3.741,18.100 C3.639,18.699 3.803,19.308 4.193,19.771 C4.586,20.237 5.160,20.504 5.767,20.504 C6.097,20.504 6.428,20.422 6.723,20.267 L11.062,17.985 L15.401,20.267 C15.696,20.422 16.027,20.504 16.357,20.504 C16.964,20.504 17.537,20.237 17.930,19.771 C18.321,19.308 18.485,18.699 18.383,18.100 L17.554,13.266 L21.064,9.843 C21.351,9.564 21.549,9.211 21.636,8.823 C21.717,8.464 21.699,8.088 21.584,7.736 C21.470,7.384 21.263,7.069 20.987,6.826 ZM20.007,8.758 L16.131,12.539 C16.003,12.663 15.945,12.842 15.975,13.018 L16.890,18.356 C16.950,18.706 16.672,18.990 16.357,18.990 C16.274,18.990 16.188,18.970 16.106,18.926 L11.314,16.406 C11.235,16.365 11.148,16.344 11.062,16.344 C10.976,16.344 10.889,16.365 10.810,16.406 L6.018,18.926 C5.935,18.970 5.850,18.990 5.767,18.990 C5.451,18.990 5.174,18.706 5.234,18.356 L6.149,13.018 C6.179,12.842 6.121,12.663 5.993,12.539 L2.116,8.758 C1.795,8.445 1.973,7.900 2.416,7.836 L7.774,7.057 C7.950,7.031 8.102,6.921 8.181,6.761 L10.577,1.904 C10.676,1.703 10.869,1.603 11.062,1.603 C11.255,1.603 11.448,1.703 11.547,1.904 L13.943,6.761 C14.022,6.921 14.174,7.031 14.350,7.057 L19.708,7.836 C20.151,7.900 20.328,8.445 20.007,8.758 Z"/>
+                                </svg> 5,0</td>
+                            <td></td>
+                            <td>0 <!--img style="margin-left: 5px;margin-top: -3px;" src="/profile/assets/img/plus.png" alt=""--></td>
+                        </tr>
+
                         </tbody>
                     </table>
+
 
                 </div>
                 <div class="tab-pane fade" id="mounth" role="tabpanel" aria-labelledby="profile-tab">
@@ -156,25 +178,25 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Скачать QrCode</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <h5>Выберите размер</h5>
                     <div class="qrcodes d-flex justify-content-around">
-                        <a href="/profile/action/qrcode.php?text=http://polychay.ru/data/redirect.php?org=55-2&amp;size=3x2" target="_blank">
+                        <a href="" target="_blank">
                             <div class="qr150"></div>
                             111x111
                         </a>
-                        <a href="/profile/action/qrcode.php?text=http://polychay.ru/data/redirect.php?org=55-2&amp;size=5x2" target="_blank">
+                        <a href= target="_blank">
                             <div class="qr250"></div>
                             185x185
                         </a>
-                        <a href="/profile/action/qrcode.php?text=http://polychay.ru/data/redirect.php?org=55-2&amp;size=8x2" target="_blank">
+                        <a href="" target="_blank">
                             <div class="qr500"></div>
                             296x296
                         </a>
-                        <a href="/profile/action/qrcode.php?text=http://polychay.ru/data/redirect.php?org=55-2&amp;size=10x2" target="_blank">
+                        <a href="" target="_blank">
                             <div class="qr1000"></div>
                             370x370
                         </a>
@@ -282,26 +304,6 @@
             width: 35px !important;
         }
     </style>
-    <div class="tech">
-        <svg class="iconafter" transform="translate(-1 -1)" width="20px" height="20px"><use xlink:href="#icon-msg"></use></svg>
-    </div>
-    <style type="text/css">
-        .tech{
-            position: fixed;
-            padding: 15px;
-            right: 0; bottom: 0;
-            background: #f06c60;
-            border: 3px solid #fff;
-            border-radius: 50%;
-            fill: #fff;
-            margin-bottom: 30px;
-            margin-right: 50px;
-            transition: .1s ease;
-        }
-        .tech:hover{
-            background: #e06459;
-            cursor: pointer;
-        }
-    </style>
-</section>
+
+
 @endsection
